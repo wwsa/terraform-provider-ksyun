@@ -47,6 +47,7 @@ var getInTheCar = map[string]bool{
 	"availability_zone_1":    true,
 	"availability_zone_2":    true,
 	"region":                 true,
+	"vip":                    true,
 }
 
 func resourceKsyunKrds() *schema.Resource {
@@ -80,6 +81,10 @@ func resourceKsyunKrds() *schema.Resource {
 			"db_instance_name": {
 				Type:     schema.TypeString,
 				Required: true,
+			},
+			"vip": {
+				Type:     schema.TypeString,
+				Computed: true,
 			},
 			"db_instance_type": {
 				Type:        schema.TypeString,
